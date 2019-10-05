@@ -9,3 +9,15 @@ var guessesSoFar = [];
 var psychicLetter;
 var answer = "j";
 
+// listing the methods taken to choose the letter and inputs//
+var newLetter = function() {
+    psychicLetter = letters[Math.floor(Math.random() * letters.length)];
+};
+
+var soFar = function() {
+    document.getElementById("guesses").innerHTML = "Guesses so far: " + guessesSoFar.join(",");
+};
+
+var guessesLeft = function() {
+    document.getElementById("left").innerHTML = "Guesses Left: " + left;
+};
