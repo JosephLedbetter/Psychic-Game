@@ -7,6 +7,7 @@ var left = 9;
 var guesses = 9;
 var guessesSoFar = [];
 var psychicLetter;
+
 var answer = "j";
 
 // listing the methods taken to choose the letter and inputs//
@@ -29,3 +30,27 @@ var newGame = function() {
     guessesLeft();
     soFar();
 }
+
+//functions created to return answers//
+document.onkeyup = function(event) {
+	var userGuess = event.key;
+    left--;
+    guessesSoFar.push(userGuess);
+    soFar();
+    guessesLeft();
+    if (left > 0) {
+        if (answer == userGuess){
+            alert("You have chosen the correct letter!")
+        }
+        if (userGuess == psychicLetter) {
+        	wins++;
+        	document.getElementById("wins").innerHTML = "Wins:" + wins;
+            newGame();
+        }
+    } 
+    else if (left == 0) {
+    	losses++;
+    	document.getElementById("losses").innerHTML = "Losses:" + losses;
+        newGame();
+    }
+};
