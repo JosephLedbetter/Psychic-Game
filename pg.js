@@ -21,3 +21,11 @@ var soFar = function() {
 var guessesLeft = function() {
     document.getElementById("left").innerHTML = "Guesses Left: " + left;
 };
+
+var newGame = function() {
+	guessedLetters = [];
+    left = 9;
+    newLetter();
+    guessesLeft();
+    soFar();
+}
